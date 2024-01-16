@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box
+        color="#667C26"
+        position="0 2 -5"
+        rotation="0 45 45"
+        scale="2 2 2"
+        animation="property: object3D.position.y; to: 3.3; dir: alternate; dur: 2000; loop: true"
+      ></a-box>
+
+      <a-box
+        color="#89C35C"
+        position="14 10 -7"
+        rotation="0 45 90"
+        scale="2 2 2"
+        animation="property: object3D.position.y; to: 3.3; dir: alternate; dur: 2000; loop: true"
+      ></a-box>
+
+      <a-box
+        color="#9DC209"
+        position="-7 10 7"
+        rotation="0 45 90"
+        scale="2 2 2"
+        animation="property: object3D.position.y; to: 3.3; dir: alternate; dur: 2000; loop: true"
+      ></a-box>
+
+      <!-- Out of the box environment! -->
+      <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+    </a-scene>
+  </body>
+</html>

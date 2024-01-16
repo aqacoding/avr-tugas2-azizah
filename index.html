@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- 
+  Nama  : Azizah Qolbu Antika
+  NPM   : 20552011079
+  Kelas : TIF 221 MC
+ -->
+<html>
+  <head>
+    <title>
+      Tugas II Augmented Virtual Reality - Azizah Qolbu Antika with A-Frame
+    </title>
+    <meta name="description" content="Mouse Click Example - A-Frame" />
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script>
+      AFRAME.registerComponent("navigate-on-click", {
+        schema: {
+          url: { default: "" },
+        },
+
+        init: function () {
+          var data = this.data;
+          var el = this.el;
+
+          el.addEventListener("click", function () {
+            window.location.href = data.url;
+          });
+        },
+      });
+    </script>
+  </head>
+  <body>
+    <a-scene background="color:#FAFAFA">
+      <a-entity
+        id="camera"
+        camera="userHeight: 1.6"
+        look-controls
+        cursor="rayOrigin: mouse"
+      ></a-entity>
+
+      <a-box
+        position="-1 0.5 -3"
+        rotation="0 45 0"
+        color="#617C58"
+        shadow
+        event-set__enter="_event: mouseenter; color: #8FBC8F"
+        event-set__leave="_event: mouseleave; color: #617C58"
+        navigate-on-click="url: animation2.html
+             "
+      >
+      </a-box>
+
+      <a-sphere
+        position="0 1.25 -5"
+        radius="1.25"
+        color="#6D7B8D"
+        shadow
+        event-set__enter="_event: mouseenter; color: #95B9C7"
+        event-set__leave="_event: mouseleave; color: #6D7B8D"
+        navigate-on-click="url: animation3.html"
+      ></a-sphere>
+
+      <a-cylinder
+        position="1 0.8993 -3"
+        radius="0.5"
+        height="1.5"
+        color="#A17188"
+        shadow
+        event-set__enter="_event: mouseenter; color: #C5908E"
+        event-set__leave="_event: mouseleave; color: #A17188"
+        navigate-on-click="url: animation1.html
+           "
+      >
+      </a-cylinder>
+
+      <a-torus
+        radius="0.5"
+        radius-tubular="0.1"
+        position="-2 3 -4"
+        rotation="0 30 0"
+        color="#B87333"
+        material="src: #grid; repeat: 16 8;"
+        shadow="cast: true; receive: true"
+        animation__rotate="property: rotation; dur: 8000; easing: linear; dir: normal; from:30 -20 0; to: 30 -20 360; loop: true"
+        geometry=""
+        event-set__enter="_event: mouseenter; color: #FF8040"
+        event-set__leave="_event: mouseleave; color: #B87333"
+        navigate-on-click="url: animation4.html
+           "
+      >
+      </a-torus>
+
+      <a-plane
+        width="100"
+        height="100"
+        position=" 0.00 0.00 0.00"
+        rotation="-90 0 0"
+        color="#888888"
+        material="src: #grid; repeat:100 100; transparent: true; opacity: 0.75"
+        shadow="cast: false; receive: true"
+        geometry=""
+      >
+      </a-plane>
+
+      <a-sky color="#FED8B1"></a-sky>
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-torus-knot
+        color="#FDBD01"
+        arc="180"
+        p="2"
+        q="7"
+        radius="5"
+        radius-tubular="0.15"
+      ></a-torus-knot>
+
+      <a-assets>
+        <img id="platform" src="https://i.imgur.com/mYmmbrp.jpg" />
+      </a-assets>
+
+      <!-- Basic triangle. -->
+      <a-triangle color="#CCC" vertex-c="1 -1 0"></a-triangle>
+
+      <!-- Textured triangle parallel to ground. -->
+      <a-triangle src="#platform" rotation="-90 0 0"></a-triangle>
+
+      <!-- Out of the box environment! -->
+      <a-entity environment="preset: poison; dressingAmount: 500"></a-entity>
+    </a-scene>
+  </body>
+</html>
